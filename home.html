@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <title>Cervejaria do Pericles Delivery</title>
+    <script>
+        function valida_entrada(){
+        const url = new URLSearchParams(window.location.search)
+        let acesso = url.get("acesso")
+       
+
+        if(acesso==1){
+            document.getElementById("item1").style.visibility = "visible";
+            document.getElementById("item2").style.visibility = "visible";            
+        }else{
+            document.getElementById("item1").style.display = "none";
+            document.getElementById("item2").style.display = "none";
+        }        
+    }
+
+    function comprar(valor){
+        window.location.href='pagar.html?valor='+valor
+    }
+    </script>
+</head>
+<body onload="valida_entrada()">
+    <nav>
+        <ul>
+            <li><a href="#">A Cervejaria</a></li>
+            <li><a href="#">Nossas Cervejas</a></li>
+            <li><a href="#">Delivery</a></li>
+        </ul>
+        <span class="carrinho">
+            <a href="#">
+                Meu Carrinho 
+                <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </a>
+        </span>
+    </nav>
+
+    <section class="card">
+        <img src="./assets/images/cerveja.png" alt="Cervejas" />
+
+        <p id="textoEntrada">Olá! Gostaria de te dar boas vindas a Cervejaria do Pericles.<br> Escolha a bebida que mais te agrada:</p>
+    </section>
+
+    <section class="items">
+        <div class="item" id="item1">
+            <img src="./assets/images/cerv1.png" alt="Vinho" />
+            <p>Vinho Tinto</p>
+            <p>R$ 80,00</p> 
+            <button class="entrar" onclick="comprar('80,00')">Comprar</button>
+        </div>
+        <div class="item" id="item2">
+            <img src="./assets/images/cerv2.png" alt="Cerveja" />
+            <p>Cerveja Heineken</p>
+            <p>R$ 20,00</p> 
+            <button class="entrar" onclick="comprar('20,00')">Comprar</button>
+        </div>
+        <div class="item" id="item3">
+            <img src="./assets/images/refri.png" alt="Refrigerante" />
+            <p>Guaraná Antartica</p>
+            <p>R$ 10,00</p>           
+            <button class="entrar" onclick="comprar('10,00')">Comprar</button>
+        </div>
+    </section>
+
+    
+    
+</body>
+</html>

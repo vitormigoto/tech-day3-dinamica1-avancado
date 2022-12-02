@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <title>Cervejaria do Pericles Delivery</title>
+    <script>
+        function valida_entrada(){
+        const url = new URLSearchParams(window.location.search)
+        let valor = url.get("valor")
+        document.getElementById("valorPago").innerHTML = "R$ " +valor
+       
+  
+    }
+
+    </script>
+</head>
+<body onload="valida_entrada()">
+    <nav>
+        <ul>
+            <li><a href="#">A Cervejaria</a></li>
+            <li><a href="#">Nossas Cervejas</a></li>
+            <li><a href="#">Delivery</a></li>
+        </ul>
+        <span class="carrinho">
+            <a href="#">
+                Meu Carrinho 
+                <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </a>
+        </span>
+    </nav>
+
+    <section class="card">
+        <img src="./assets/images/cerveja.png" alt="Cervejas" />
+
+        <p id="textoEntrada">Olá!<br> O total a ser pago é:</p>
+        <p id="valorPago"></p>
+    </section>
+
+   
+
+    
+    
+</body>
+</html>
